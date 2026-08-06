@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Programming</title>
+  
+
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+
+  <style>
+   *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f8fafc;
+    color: #1e293b;
+    line-height: 1.7;
+}
+
+.page-wrapper {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.content-container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 🚀 हीरो सेक्शन */
+.hero-section {
+    background-color: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+    padding: 60px 0;
+    width: 100%;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.hero-text h1 {
+    font-size: 2.8rem;
+    color: #0f172a;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    font-weight: 800;
+}
+
+.hero-text p {
+    font-size: 1.2rem;
+    color: #475569;
+    margin-bottom: 30px;
+}
+
+.cta-btn {
+    background-color: #ffc107;
+    color: black;
+    padding: 14px 32px;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 6px;
+    border: 1px solid black;
+    display: inline-block;
+    box-shadow: 0 4px 6px -1px rgba(79, 70, 229, 0.2);
+    transition: all 0.3s ease;
+}
+
+.cta-btn:hover {
+    background-color: gray;
+    transform: translateY(-2px);
+}
+
+.hero-image img {
+    width: 100%;
+    height: 250px;
+    border-radius: 12px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+    object-fit: cover;
+}
+
+/* 📋 कॉमन सेक्शन हेडिंग्स */
+.section-title {
+    font-size: 1.8rem;
+    color: #0f172a;
+    margin: 50px 0 20px 0;
+    position: relative;
+    padding-bottom: 8px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 4px;
+    background-color: black;
+    border-radius: 2px;
+}
+
+/* ✔️ बुलेट पॉइंट्स */
+.points-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 15px;
+}
+
+.points-list li {
+    position: relative;
+    padding-left: 28px;
+    font-size: 1.05rem;
+    color: #334155;
+}
+
+.points-list li::before {
+    content: "✓";
+    color: #10b981;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    font-size: 1.1rem;
+}
+
+/* 🎓 सिलेबस ग्रिड */
+.syllabus-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+    margin-top: 25px;
+}
+
+.syllabus-card {
+    background: #ffffff;
+    padding: 28px;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+}
+
+.syllabus-card h3 {
+    color: black;
+    margin-bottom: 16px;
+    font-size: 1.3rem;
+    border-bottom: 1px solid #f1f5f9;
+    padding-bottom: 10px;
+}
+
+.syllabus-card ul {
+    list-style-type: none;
+}
+
+.syllabus-card li {
+    margin-bottom: 10px;
+    color: #475569;
+    font-size: 0.95rem;
+    position: relative;
+    padding-left: 15px;
+}
+
+.syllabus-card li::before {
+    content: "•";
+    color: #cbd5e1;
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+/* 💻 प्रोजेक्ट्स */
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 20px;
+}
+
+.project-card {
+    background-color: #ffffff;
+    padding: 24px;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+}
+
+.project-card h4 {
+    color: #0f172a;
+    font-size: 1.15rem;
+    margin-bottom: 8px;
+}
+
+.project-card p {
+    color: #64748b;
+    font-size: 0.95rem;
+}
+
+/* 📱 रिस्पॉन्सिव मीडिया क्वेरीज */
+@media (max-width: 992px) {
+    .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 30px;
+    }
+    .hero-text h1 {
+        font-size: 2.2rem;
+    }
+    .section-title::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .section-title {
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+        /* हीरो सेक्शन को मोबाइल पर एक के नीचे एक और सेंटर करने के लिए */
+        .hero-grid {
+            grid-template-columns: 1fr;
+            text-align: center;
+            gap: 30px;
+        }
+
+        /* टेक्स्ट और बटन दोनों को बिल्कुल बीच (Center) में लाने के लिए */
+        .hero-text {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .hero-text h1 {
+            font-size: 2.2rem;
+        }
+
+        /* हेडिंग्स और उनके नीचे की अंडरलाइन को सेंटर करने के लिए */
+        .section-title {
+            text-align: center;
+        }
+
+        .section-title::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* बुलेट पॉइंट्स और प्रोजेक्ट्स को 1 कॉलम में करने के लिए */
+        .points-list {
+            grid-template-columns: 1fr;
+        }
+
+        .projects-container {
+            grid-template-columns: 1fr;
+        }
+    }
+  </style>
+</head>
+<body>
+    
+  <div class="row header">
+        <div class="col-sm-12">
+
+          <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top navigation-custom">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img src="images/logo1.jpg" alt="logo" class="logo">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav me-auto ">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active"  aria-current="page" href="/">About</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="/" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Courses
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/full stack web development.html">Full Stack Web Development</a></li>
+            <li><hr class="dropdown-divider"></li>
+
+            <li><a class="dropdown-item" href="/pythone programming.html">Pythone Programming</a></li>
+            <li><hr class="dropdown-divider"></li>
+
+            <li><a class="dropdown-item" href="/cloud computing.html">Cloud Computing</a></li>
+            <li><hr class="dropdown-divider"></li>
+
+            <li><a class="dropdown-item" href="/artificial intelligence.html">Artificial Intelligence</a></li>
+            <li><hr class="dropdown-divider"></li>
+
+            <li><a class="dropdown-item" href="/cyber security.html">Cyber Security</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/">Instructors</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/">My Learning</a>
+        </li>
+
+         <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/">Certificates</a>
+        </li>
+        
+
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/">Contact</a>
+        </li>
+
+      </ul>
+      <form class="d-flex" role="search">
+        <button type="button"   onclick="toggleMode()" id="btn"  style="margin-right: 10px; 
+        background-color: transparent; border-radius: 10px; color: white; border: 1px solid white;">🌙Dark Mood</button>
+        <a href="/signup.html" class="btn btn-signup me-2">Sign Up</a>
+        <a href="/login.html" class="btn btn-login">Login</a> 
+      </form>
+    </div>
+  </div>
+</nav>
+        </div>
+       </div>
+      
+
+<div class="page-wrapper">
+        
+        <!-- 🚀 मुख्य हीरो सेक्शन (साइड इमेज वाला) -->
+        <section class="hero-section">
+            <div class="content-container">
+                <div class="hero-grid">
+                    <div class="hero-text">
+                        <h1>Python Programming</h1>
+                        <p>Master the world's most popular and beginner-friendly programming language from scratch.</p>
+                        <a href="#" class="cta-btn">Enroll Now</a>
+                    </div>
+                    <div class="hero-image">
+                        <!-- Python थीम से जुड़ी एक बेहतरीन डमी इमेज का लिंक -->
+                        <img src="images/Py1.webp" alt="Python Code on Screen">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 📖 मुख्य कंटेंट कंटेनर -->
+        <div class="content-container">
+            
+            <!-- About Course -->
+            <section>
+                <h2 class="section-title">About This Course</h2>
+                <p>Python is the backbone of modern technology, powering everything from simple automation scripts to complex Artificial Intelligence algorithms. This course is specially crafted for absolute beginners. You will start with basic logic, move on to Object-Oriented Programming (OOPs), and learn how to work with powerful libraries used in data science and web automation.</p>
+            </section>
+
+            <!-- What You Will Learn -->
+            <section>
+                <h2 class="section-title">What You Will Learn</h2>
+                <ul class="points-list">
+                    <li>Write clean, efficient, and professional Python code from day one.</li>
+                    <li>Understand fundamental concepts like data types, loops, and functions.</li>
+                    <li>Master Object-Oriented Programming (OOPs) to build scalable software.</li>
+                    <li>Work with files and handle complex data structures efficiently.</li>
+                    <li>Utilize standard Python libraries for automation and data analysis.</li>
+                </ul>
+            </section>
+
+            <!-- Syllabus -->
+            <section>
+                <h2 class="section-title">Course Syllabus</h2>
+                <div class="syllabus-grid">
+                    
+                    <div class="syllabus-card">
+                        <h3>Module 1: Basics & Logic</h3>
+                        <ul>
+                            <li>Introduction to Python & Setup (VS Code)</li>
+                            <li>Variables, Data Types, and Operators</li>
+                            <li>Conditional Statements (If-Else)</li>
+                            <li>Loops (For, While) and Control Statements</li>
+                        </ul>
+                    </div>
+
+                    <div class="syllabus-card">
+                        <h3>Module 2: Core Concepts</h3>
+                        <ul>
+                            <li>Functions, Modules, and Packages</li>
+                            <li>Data Structures (Lists, Tuples, Dicts, Sets)</li>
+                            <li>File Handling (Reading & Writing Files)</li>
+                            <li>Exception & Error Handling</li>
+                        </ul>
+                    </div>
+
+                    <div class="syllabus-card">
+                        <h3>Module 3: Advanced & Libraries</h3>
+                        <ul>
+                            <li>Object-Oriented Programming (Classes & Objects)</li>
+                            <li>Inheritance, Polymorphism, and Encapsulation</li>
+                            <li>Introduction to Libraries (NumPy, Pandas)</li>
+                            <li>Web Scraping and Automation Basics</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Projects -->
+            <section style="margin-bottom: 60px;">
+                <h2 class="section-title">Practical Projects</h2>
+                <div class="projects-container">
+                    <div class="project-card">
+                        <h4>1. Automated Web Scraper</h4>
+                        <p>A smart bot that automatically extracts data, headlines, or product prices from websites and saves them into an Excel sheet.</p>
+                    </div>
+                    <div class="project-card">
+                        <h4>2. Desktop Task Assistant</h4>
+                        <p>A CLI-based task manager application that helps users organize their daily routine, utilizing file operations for database storage.</p>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+
+
+ <footer>
+  <div class="container-fluid footer-bg">
+    <div class="row footer-container">
+      
+      <div class="col-md-3 col-sm-6 footer-col">
+        <h3 class="footer-heading">Learn Hub</h3>
+        <p class="footer-desc">Learn Hub is an online learning platform that helps students build skills through high-quality courses and expert instructors.</p>
+      </div>
+
+      <div class="col-md-3 col-sm-6 footer-col">
+        <h3 class="footer-heading">Quick-links</h3>
+        <div class="footer-links-list">
+          <a href="#">Home</a>
+          <a href="#">About</a>
+          <a href="#">Courses</a>
+          <a href="#">Instructors</a>
+          <a href="#">Contact</a>
+          <a href="#">Certificates</a>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-sm-6 footer-col">
+        <h3 class="footer-heading">Popular Courses</h3>
+        <div class="footer-links-list">
+          <a href="#">HTML & CSS</a>
+          <a href="#">Python</a>
+          <a href="#">Data Science</a>
+          <a href="#">Artificial Intelligence</a>
+          <a href="#">JavaScript</a>
+          <a href="#">Cloud Computing</a>
+          <a href="#">Bootstrap</a>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-sm-6 footer-col">
+        <h3 class="footer-heading touch">Contact Us</h3>
+        <ul class="get-in-touch">
+          <li>
+            <i class="bi bi-telephone-inbound"></i>
+            <strong>Phone:</strong><br>
+            +91-612-2451070
+          </li>
+          <li>
+            <i class="bi bi-envelope-at"></i>
+            <strong>Email:</strong><br>
+            support@learnhub.com
+          </li>
+          <li>
+            <i class="bi bi-geo-alt"></i>
+            <strong>Address:</strong><br>
+            Lucknow, Uttar Pradesh, India
+          </li>
+        </ul>
+      </div>
+
+    </div> 
+
+    
+    <div class="row">
+      <div class="col-12 text-center">
+        <div class="icons">
+          <i class="bi bi-geo-alt-fill"></i>
+          <i class="bi bi-telephone-fill"></i>
+          <i class="bi bi-envelope-fill"></i>
+          <i class="bi bi-facebook"></i>
+          <i class="bi bi-instagram"></i>
+          <i class="bi bi-linkedin"></i>
+          <i class="bi bi-twitter"></i>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <div class="footer-text">
+          <p>&copy; 2026 Learn Hub. All Rights Reserved.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+
+          <script src=" https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learning Management System</title>
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Momo+Trust+Display&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+
+
+<style>
+.instructors-container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.instructors-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.instructors-title {
+    font-size: 28px;
+    color: #0f172a;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.instructors-subtitle {
+    color: #64748b;
+    font-size: 15px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.instructors-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.instructor-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    display: flex;
+    padding: 25px;
+    gap: 25px;
+    align-items: center;
+    transition: transform 0.2s ease;
+}
+
+.instructor-card:hover {
+    transform: translateX(4px); 
+}
+
+.instructor-image-area {
+    flex-shrink: 0;
+}
+
+.dummy-profile-pic {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    font-weight: bold;
+    color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.pic-blue { background: linear-gradient(135deg, #3b82f6, #1d4ed8); }
+.pic-green { background: linear-gradient(135deg, #10b981, #047857); }
+.pic-purple { background: linear-gradient(135deg, #8b5cf6, #6d28d9); }
+
+.instructor-info {
+    flex-grow: 1;
+}
+
+.instructor-name {
+    font-size: 20px;
+    color: #1e293b;
+    margin-bottom: 4px;
+    font-weight: 600;
+}
+
+.instructor-role {
+    font-size: 14px;
+    color: #0284c7; 
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.instructor-bio {
+    font-size: 14px;
+    color: #475569;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.instructor-meta {
+    display: flex;
+    gap: 20px;
+    font-size: 13px;
+    color: #64748b;
+    border-top: 1px solid #f1f5f9;
+    padding-top: 10px;
+}
+
+.instructor-meta strong {
+    color: #0f172a;
+}
+
+@media (max-width: 640px) {
+    .instructor-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+    .instructor-meta {
+        justify-content: center;
+    }
+}
+
+
+</style>
+
+
+</head>
+
+<body>
+
+  <div class="row header">
+    <div class="col-sm-12">
+
+      <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top navigation-custom">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img src="images/logo1.jpg" alt="logo" class="logo">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto ">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/about.html">About</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  Courses
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="/full stack web development.html">Full Stack Web Development</a>
+                  </li>
+                  <li>
+                    <hr class="dropdown-divider">
+                  </li>
+
+                  <li><a class="dropdown-item" href="/pythone programming.html">Pythone Programming</a></li>
+                  <li>
+                    <hr class="dropdown-divider">
+                  </li>
+
+                  <li><a class="dropdown-item" href="/cloud computing.html">Cloud Computing</a></li>
+                  <li>
+                    <hr class="dropdown-divider">
+                  </li>
+
+                  <li><a class="dropdown-item" href="/artificial intelligence.html">Artificial Intelligence</a></li>
+                  <li>
+                    <hr class="dropdown-divider">
+                  </li>
+
+                  <li><a class="dropdown-item" href="/cyber security.html">Cyber Security</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/instructors.html">Instructors</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/my learning.html">My Learning</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/certificate.html">Certificates</a>
+              </li>
+
+
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/contact.html">Contact</a>
+              </li>
+
+            </ul>
+            <form class="d-flex" role="search">
+               <div id="google_translate" class="google" href="/"></div>
+              <button type="button" onclick="toggleMode()" id="btn" style="background-color: transparent;
+         color: white; margin-right: 10px; border: 1px solid white;
+          border-radius: 10px;">🌙Dark Mood</button>
+              <a href="/signup.html" class="btn btn-signup me-2">Sign Up</a>
+              <a href="/login.html" class="btn btn-login">Login</a>
+            </form>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+
+  <section class="hero-section">
+
+    <div class="hero-content">
+      <h1>Learn Without Limits</h1>
+      <h2>Build Your Future with Online Learning</h2>
+      <p>Learn HTML, CSS, JavaScript, Python, AI, Data Science from expert instructors.</p>
+      <div class="hero-buttons">
+        <a href="#" class="btn btn-primary">Explore Courses</a>
+        <a href="#" class="btn btn-secondary">Join Now</a>
+      </div>
+    </div>
+
+
+
+    <div class="hero-image">
+      <img src="images/student.jpg" alt="student with leptop">
+    </div>
+
+  </section>
+
+
+  <section class="container mt-5">
+    <h2 class="text-center fw-bold mt-5">⭐Popular Courses</h2>
+    <p>👉Explore our most popular online courses.</p>
+
+    <div class="row justify-content-center">
+
+      <div class="col-md-4 mb-4 d-flex justify-content-center">
+        <div class="card">
+          <img src="images/HCB.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">HTML & CSS Bootsrap</h5>
+            <h6 class="card-text">
+              ⭐⭐⭐⭐⭐(4.8)</h6>
+            <h6>👩‍🎓1200+Students<br>
+              ⏱️8 Weeks<br>
+              💰Free</h6>
+            <a href="#" class="btn btn-primary">Enroll Now</a>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col-md-4 mb-4 d-flex justify-content-center">
+        <div class="card">
+          <img src="images/js4.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">JavaScript</h5>
+            <h6 class="card-text">
+              ⭐⭐⭐⭐⭐(4.7)</h6>
+            <h6>👩‍🎓1500+Students<br>
+              ⏱️10 Weeks<br>
+              💰Free</h6>
+            <a href="#" class="btn btn-primary">Enroll Now</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-4 d-flex justify-content-center">
+        <div class="card">
+          <img src="images/py5.webp" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Python</h5>
+            <h6 class="card-text">
+              ⭐⭐⭐⭐⭐(4.9)</h6>
+            <h6>👩‍🎓1800+Students<br>
+              ⏱️12 Weeks<br>
+              💰Free</h6>
+            <a href="#" class="btn btn-primary">Enroll Now</a>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col-md-4 mb-4 d-flex justify-content-center">
+        <div class="card">
+          <img src="images/ds3.avif" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Data Science</h5>
+            <h6 class="card-text">
+              ⭐⭐⭐⭐⭐(4.8)</h6>
+            <h6>👩‍🎓900+Students<br>
+              ⏱️14 Weeks<br>
+              💰Rs499</h6>
+            <a href="#" class="btn btn-primary">Enroll Now</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-4 d-flex justify-content-center">
+        <div class="card">
+          <img src="images/ai2.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Artificial Intelligence</h5>
+            <h6 class="card-text">
+              ⭐⭐⭐⭐⭐(4.9)</h6>
+            <h6>👩‍🎓1200+Students<br>
+              ⏱️16 Weeks<br>
+              💰Rs999</h6>
+            <a href="#" class="btn btn-primary">Enroll Now</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-4 d-flex justify-content-center">
+        <div class="card">
+          <img src="images/cc.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Cloud Computing</h5>
+            <h6 class="card-text">
+              ⭐⭐⭐⭐⭐(4.7)</h6>
+            <h6>👩‍🎓700+Students<br>
+              ⏱️10 Weeks<br>
+              💰Rs799</h6>
+            <a href="#" class="btn btn-primary">Enroll Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <section class="container mt-5">
+    <h2 class="text-center fw-bold">⭐Why Choose Learn Hub</h2>
+    <div class="row mt-4">
+      <div class="col-md-3">
+        <div class="why-box">
+          <i class="bi bi-award"></i>
+          <h4>Expert Instructors</h4>
+          <p>Learn from experienced and skilled professionals.</p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="why-box">
+          <i class="bi bi-award"></i>
+          <h4>Certificates</h4>
+          <p>Earn a certificates after course completion.</p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="why-box">
+          <i class="bi bi-award"></i>
+          <h4>Hands-on Projects</h4>
+          <p>Practice with real-world projects.</p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="why-box">
+          <i class="bi bi-award"></i>
+          <h4>LifeTime Access</h4>
+          <p>Access your courses anytime,anywhere.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <section>
+
+     <!-- <div class="container mt-5">
+      <h2 class="text-center fw-bold">👩‍🏫Meet Expert Instructors</h2>
+      <div class="row mt-4 justify-content-center">
+
+
+        <div class="col-12 col-md-3 text-center">
+          <div class="Instructor-card ">
+            <img src="images/john.jpg" class="card-img-top1" alt="...">
+            <h4 class="card-title">John Smith</h4>
+            <h6 class="card-text">Web Development </h6>
+            <p>8+ Years Experience</p>
+            <a href="#" class="btn btn-primary">View profile</a>
+          </div>
+        </div>
+
+
+        <div class=" col-12 col-md-3 text-center ">
+          <div class="Instructor-card ">
+            <img src="images/male.avif" class="card-img-top1" alt="...">
+
+            <h4 class="card-title">Sarah Smith</h4>
+            <h6 class="card-text">Python Programming </h6>
+            <p>6+ Years Experience</p>
+            <a href="#" class="btn btn-primary">View profile</a>
+          </div>
+        </div>
+
+
+        <div class="col-12 col-md-3 text-center">
+          <div class="Instructor1-card ">
+            <img src="images/female1.jpg" class="card-img-top1" alt="...">
+
+            <h4 class="card-title">David Lee</h4>
+            <h6 class="card-text">Data science </h6>
+            <p>10+ Years Experience</p>
+            <a href="#" class="btn btn-primary">View profile</a>
+          </div>
+        </div>
+
+
+        <div class="col-12 col-md-3 text-center ">
+          <div class="Instructor-card ">
+            <img src="images/online.jpg" class="card-img-top1" alt="...">
+
+            <h4 class="card-title">Priya Shah</h4>
+            <h6 class="card-text">UI/UX Design </h6>
+            <p>5+ Years Experience</p>
+            <a href="#" class="btn btn-primary">View profile</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+    --->
+
+
+
+
+
+
+
+
+
+
+
+    <main class="instructors-container">
+    <header class="instructors-header">
+        <h1 class="instructors-title">Meet Our Expert Instructors</h1>
+        <p class="instructors-subtitle">Learn from industry leaders,
+             experienced professors, and passionate mentors.</p>
+    </header>
+
+    <div class="instructors-grid">
+        
+        <div class="instructor-card">
+            <div class="instructor-image-area">
+                <div class="dummy-profile-pic pic-blue">AS</div>
+            </div>
+            <div class="instructor-info">
+                <h3 class="instructor-name">Prof. Amit Sharma</h3>
+                <p class="instructor-role">Senior Web Developer & Author</p>
+                <p class="instructor-bio">Over 10 years of experience in
+                     Frontend technologies. Specialized in HTML5, CSS3, Bootstrap, 
+                     and UI/UX design.</p>
+                
+                <div class="instructor-meta">
+                    <span><strong>5+</strong> Courses</span>
+                    <span><strong>15,000+</strong> Students</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="instructor-card">
+            <div class="instructor-image-area">
+                <div class="dummy-profile-pic pic-green">KP</div>
+            </div>
+            <div class="instructor-info">
+                <h3 class="instructor-name">Dr. Kiran Patel</h3>
+                <p class="instructor-role">Data Scientist & Python Expert</p>
+                <p class="instructor-bio">Ph.D. in Computer Science with a passion 
+                    for teaching. Expert in Python, Machine Learning, and Data Analytics.</p>
+                
+                <div class="instructor-meta">
+                    <span><strong>4+</strong> Courses</span>
+                    <span><strong>12,000+</strong> Students</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="instructor-card">
+            <div class="instructor-image-area">
+                <div class="dummy-profile-pic pic-purple">RK</div>
+            </div>
+            <div class="instructor-info">
+                <h3 class="instructor-name">Rohit Khan</h3>
+                <p class="instructor-role">Full Stack Engineer</p>
+                <p class="instructor-bio">A software engineer by profession and 
+                    educator by passion. Teaching JavaScript, Node.js, and React backend systems.</p>
+                
+                <div class="instructor-meta">
+                    <span><strong>6+</strong> Courses</span>
+                    <span><strong>18,000+</strong> Students</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</main>
+
+
+
+
+
+
+
+
+
+
+  </section>
+
+
+  <br><br>
+  <section>
+    <div class="container">
+      <h2 class="text-center fw-bold">⭐Student Testimonials</h2>
+
+      <div class="row">
+
+        <div class="col-md-4">
+          <div class="testimonial-card">
+            <img src="images/p1.webp" alt="" class="card-img-top2">
+            <h4 class="student-name">Rahul Singh⭐⭐⭐⭐⭐</h4>
+            <p>The HTML & CSS Course was easy to understand
+              and helped me build my first website.</p>
+          </div>
+        </div>
+
+
+        <div class="col-md-4">
+          <div class="testimonial-card">
+            <img src="images/HF.jpg" alt="" class="card-img-top2">
+            <h4 class="student-name">Apurva Panday⭐⭐⭐⭐⭐</h4>
+            <p>Python lessons were well explained <br>
+              practicals.</p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="testimonial-card">
+            <img src="images/MP.jpg" alt="" class="card-img-top2">
+            <h4 class="student-name">Kuldeep Singh⭐⭐⭐⭐⭐</h4>
+            <p>Excellent instructors and a very user-friendly learning platform.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+
+
+
+  <footer>
+  <div class="container-fluid footer-bg">
+    <div class="row footer-container">
+      
+      <div class="col-md-3 col-sm-6 footer-col">
+        <h3 class="footer-heading">Learn Hub</h3>
+        <p class="footer-desc">Learn Hub is an online learning platform that helps students build skills through high-quality courses and expert instructors.</p>
+      </div>
+
+      <div class="col-md-3 col-sm-6 footer-col">
+        <h3 class="footer-heading">Quick-links</h3>
+        <div class="footer-links-list">
+          <a href="#">Home</a>
+          <a href="#">About</a>
+          <a href="#">Courses</a>
+          <a href="#">Instructors</a>
+          <a href="#">Contact</a>
+          <a href="#">Certificates</a>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-sm-6 footer-col">
+        <h3 class="footer-heading">Popular Courses</h3>
+        <div class="footer-links-list">
+          <a href="#">HTML & CSS</a>
+          <a href="#">Python</a>
+          <a href="#">Data Science</a>
+          <a href="#">Artificial Intelligence</a>
+          <a href="#">JavaScript</a>
+          <a href="#">Cloud Computing</a>
+          <a href="#">Bootstrap</a>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-sm-6 footer-col">
+        <h3 class="footer-heading touch">Contact Us</h3>
+        <ul class="get-in-touch">
+          <li>
+            <i class="bi bi-telephone-inbound"></i>
+            <strong>Phone:</strong><br>
+            +91-612-2451070
+          </li>
+          <li>
+            <i class="bi bi-envelope-at"></i>
+            <strong>Email:</strong><br>
+            support@learnhub.com
+          </li>
+          <li>
+            <i class="bi bi-geo-alt"></i>
+            <strong>Address:</strong><br>
+            Lucknow, Uttar Pradesh, India
+          </li>
+        </ul>
+      </div>
+
+    </div> 
+
+    
+    <div class="row">
+      <div class="col-12 text-center">
+        <div class="icons">
+          <i class="bi bi-geo-alt-fill"></i>
+          <i class="bi bi-telephone-fill"></i>
+          <i class="bi bi-envelope-fill"></i>
+          <i class="bi bi-facebook"></i>
+          <i class="bi bi-instagram"></i>
+          <i class="bi bi-linkedin"></i>
+          <i class="bi bi-twitter"></i>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <div class="footer-text">
+          <p>&copy; 2026 Learn Hub. All Rights Reserved.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+
+
+
+
+
+  <!--bootstrap CDN JS-->
+
+     <script src=" https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+
+  <script src="script.js"></script>
+
+
+  <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
+
+
+
+
+    <!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/6a58c554bca1d21d4c99931c/1jtlc5l4n';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+
+
+</body>
+
+</html>
